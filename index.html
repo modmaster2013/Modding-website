@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RAD Keyshop – 2Take1 Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0f0f0f;
+      color: #c9f;
+      font-family: 'Orbitron', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      color: #39ff14;
+      text-align: center;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    .glow-container {
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #39ff14;
+      box-shadow: 0 0 20px #39ff14;
+      padding: 40px;
+      margin: 8vh auto;
+      max-width: 800px;
+      border-radius: 10px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .warning {
+      color: red;
+      font-size: 0.9em;
+      animation: blink 1s infinite;
+      margin-bottom: 15px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    select, input[type="radio"] {
+      margin: 8px 0;
+    }
+
+    button {
+      background: #39ff14;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: black;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    button:hover {
+      background: #00ff88;
+      transform: scale(1.05);
+    }
+
+    .img-preview {
+      margin: 20px auto;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .img-preview img {
+      max-width: 300px;
+      border: 2px solid #39ff14;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #39ff14;
+    }
+
+    .reviews {
+      background: rgba(255,255,255,0.05);
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .reviews p {
+      margin-bottom: 15px;
+      color: #ccc;
+      font-style: italic;
+      border-left: 3px solid #39ff14;
+      padding-left: 15px;
+    }
+
+    @keyframes flicker {
+      0% { text-shadow: 0 0 5px #39ff14; }
+      100% { text-shadow: 0 0 20px #39ff14, 0 0 30px #39ff14; }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="glow-container">
+    <h1>⚡ 2Take1 Mod Shop ⚡</h1>
+    <p>Choose your mod type, see inside the menu, then buy your key. Simple.</p>
+    <p class="warning">⚠️ No Refunds. No Chargebacks. No Exceptions. ⚠️</p>
+
+    <form action="/create-checkout-session" method="POST">
+      <label for="tier">Select Tier:</label><br>
+      <input type="radio" name="modTier" value="standard" checked> Standard Key (£12.99)<br>
+      <input type="radio" name="modTier" value="lifetime"> Lifetime Key (£49.99)<br>
+
+      <!-- Optional: Include as hidden input or adjust session server-side -->
+      <input type="hidden" name="product" value="2take1-mod">
+
+      <button type="submit">💳 Buy Now</button>
+    </form>
+
+    <div class="img-preview">
+      <img src="https://placehold.co/300x200/39ff14/000000?text=2Take1+Menu" alt="2Take1 Menu">
+      <img src="https://placehold.co/300x200/39ff14/000000?text=GTA+ESP+Overlay" alt="GTA In-Game Preview">
+    </div>
+
+    <div class="reviews">
+      <h3>User Reviews</h3>
+      <p>"Absolutely cracked. I joined lobbies as Thanos. 10/10." – user: Th3GodOfChaos</p>
+      <p>"Lifetime was expensive but I now run RP servers like a puppet master." – user: XxHavocMain</p>
+      <p>"Menu clean. ESP, Aimbot, money drop all working. Respect the seller." – user: TTVGhostyZ</p>
+      <p>"Took 5 seconds to get key. Expected slower, impressed." – user: chetaRoyal</p>
+      <p>"Please make one for RDR2 too 🙏" – user: outlawJordan</p>
+    </div>
+  </div>
+</body>
+</html>
